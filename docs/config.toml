@@ -4,7 +4,8 @@ title = "ipsw"
 
 enableRobotsTXT = true
 
-theme = ["hugo-whisper-theme"]
+# theme = ["hugo-whisper-theme"]
+theme = ["doks-theme"]
 
 pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
