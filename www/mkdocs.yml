@@ -1,0 +1,89 @@
+site_name: ipsw
+site_url: https://blacktop.github.io/ipsw/
+site_description: iOS/macOS Research Swiss Army Knife
+copyright: Copyright © 2018-2022 blacktop
+repo_name: blacktop/ipsw
+repo_url: https://github.com/blacktop/ipsw
+edit_uri: edit/main/www/docs/
+
+theme:
+  name: material
+  custom_dir: docs/overrides
+  language: en
+  logo: static/avatar.png
+  favicon: static/favicon.ico
+  include_search_page: false
+  search_index_only: true
+  palette:
+    - media: "(prefers-color-scheme: light)"  # Light mode
+      scheme: default
+      primary: deep purple
+      toggle:
+        icon: material/lightbulb
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"  # Dark mode
+      scheme: slate
+      primary: deep purple
+      accent: indigo
+      toggle:
+        icon: material/lightbulb-outline
+        name: Switch to light mode
+  features:
+    - search.suggest
+    - search.highlight
+    - search.share
+
+plugins:
+  - search
+  - minify:
+      minify_html: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/blacktop/ipsw
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/blacktop__
+
+nav:
+- Home: index.md
+- intro.md
+- install.md
+- quick-start.md
+- Command Line Usage:
+  - ipsw: cmd/ipsw.md
+  - ipsw device-list: cmd/ipsw_device-list.md
+  - ipsw download: 
+      - ipsw download ipsw: cmd/ipsw_download_ipsw.md
+  - ipsw dtree: cmd/ipsw_dtree.md
+  - ipsw dyld: cmd/ipsw_dyld.md
+  - ipsw ent: cmd/ipsw_ent.md
+  - ipsw extract: cmd/ipsw_extract.md
+  - ipsw iboot: cmd/ipsw_iboot.md
+  - ipsw img4: cmd/ipsw_img4.md
+  - ipsw info: cmd/ipsw_info.md
+  - ipsw kernel: cmd/ipsw_kernel.md
+  - ipsw macho: cmd/ipsw_macho.md
+  - ipsw ota: cmd/ipsw_ota.md
+  - ipsw sepfw: cmd/ipsw_sepfw.md
+  - ipsw shsh: cmd/ipsw_shsh.md
+  - ipsw symbolicate: cmd/ipsw_symbolicate.md
+  - ipsw update: cmd/ipsw_update.md
+  - ipsw version: cmd/ipsw_version.md
+- Community:
+  - sponsors.md
+  - contributing.md
+- links.md
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - meta
+  - toc:
+      permalink: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - footnotes

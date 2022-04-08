@@ -54,6 +54,11 @@ build: ## Build ipsw
 	@$(GO_BIN) mod download
 	@CGO_ENABLED=1 $(GO_BIN) build -ldflags "-s -w -X github.com/blacktop/ipsw/cmd/ipsw/cmd.AppVersion=$(CUR_VERSION) -X github.com/blacktop/ipsw/cmd/ipsw/cmd.AppBuildTime==$(date -u +%Y%m%d)" ./cmd/ipsw
 
+.PHONY: ddocs
+ddocs: ## Build the hugo docs
+	@docker run --rm -v ${PWD}/www:/docs squidfunk/mkdocs-material build
+	@docker run --rm -p 8000:8000 -v ${PWD}/www:/docs squidfunk/mkdocs-material
+
 .PHONY: docs
 docs: ## Build the hugo docs
 	@echo " > Building Docs"
